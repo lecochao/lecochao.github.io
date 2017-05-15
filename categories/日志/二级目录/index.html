@@ -51,7 +51,7 @@
 		  <h1 class="header-author"><a href="/">Lecochao</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">一天进步一点</p>
+		<p class="header-subtitle">生活如此美好 -- 怎呢缺了我！</p>
 		
 
 		<nav class="header-menu">
@@ -72,9 +72,15 @@
     			
             
     			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友情</a>
+    			
             
     			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			
+            
+    			
+    			<a q-on="click: openSlider(e, 'inner')" href="javascript:void(0)">文章</a>
     			
             
 		</nav>
@@ -84,8 +90,6 @@
 					<a class="github" target="_blank" href="https://github.com/lecochao" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="weibo" target="_blank" href="http://weibo.com/chaoLeco" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="qq" target="_blank" href="/475911599" title="qq"><i class="icon-qq"></i></a>
 		        
 					<a class="mail" target="_blank" href="mailto:lecochao@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
@@ -111,7 +115,7 @@
 			  <h1 class="header-author js-header-author">Lecochao</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>一天进步一点<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>生活如此美好 -- 怎呢缺了我！<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -129,8 +133,6 @@
 						<a class="github" target="_blank" href="https://github.com/lecochao" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/chaoLeco" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="qq" target="_blank" href="/475911599" title="qq"><i class="icon-qq"></i></a>
 			        
 						<a class="mail" target="_blank" href="mailto:lecochao@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
@@ -190,6 +192,17 @@
 
         <div class="article-info info-on-right">
           
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">oc</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
           
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
@@ -267,6 +280,12 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
       
     
       
+      
+      
+    
+      
+      
+      
     
       
       
@@ -278,13 +297,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 25%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
+      <li style="width: 25%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友情</a></li>
+      
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 25%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      
+        
+      
+      <li style="width: 25%" q-on="click: openSlider(e, 'inner')"><a href="javascript:void(0)" q-class="active:inner">文章</a></li>
       
         
     </ul>
@@ -303,6 +328,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">oc</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -332,6 +361,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
       tags: true
 </pre>
           </p>
+
           <li class="search-li" q-repeat="items" q-show="isShow">
             <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
             <p class="search-time">
@@ -348,6 +378,38 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
     
 
     
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
+    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
@@ -359,6 +421,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
   </div>
   
 </div>
+
     <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
